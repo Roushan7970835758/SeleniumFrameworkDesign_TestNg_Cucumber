@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite">
+<listeners>
+		<listener class-name ="Selenium.TestComponents.Listners"/>
+	</listeners>
+	
+	 <test name="SingleGroupTest">
+    <groups>
+        <run>
+            <include name="perchase"/>
+        </run>
+    </groups>
+    <classes>
+        <class name="Selenium.test.submitOrderTest"/>
+    </classes>
+</test>
+
+  	
+  
+	
+    
+</suite> <!-- Suite -->
