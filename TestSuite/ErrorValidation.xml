@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Suite">
+	
+	 <test name="SingleGroupTest">
+    <groups>
+        <run>
+            <include name="errorValidation"/>
+        </run>
+    </groups>
+    <classes>
+        <class name="Selenium.test.errorValidationTest"/>
+    </classes>
+</test>
+
+  	
+  
+	
+    
+</suite> <!-- Suite -->
