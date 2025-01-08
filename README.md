@@ -1,7 +1,9 @@
 # SeleniumFrameworkDesign_TestNg_Cucumber
 # Robust Automation Testing Framework
 
-![Automation Testing Banner](https://via.placeholder.com/1000x300?text=Automation+Testing+Framework)
+<!--![Automation Testing Banner](https://via.placeholder.com/1000x300?text=Automation+Testing+Framework)   -->
+![Image Alt Text](https://anhtester.com/uploads/lesson/banner_post_cucumber_testng.jpg)
+
 
 This project is a **robust automation testing framework** built using **Java**, **Selenium WebDriver**, **TestNG**, and **Cucumber**. It integrates the strengths of **TestNG** for test execution and **Cucumber** for behavior-driven development (BDD), providing a **hybrid solution** for efficient and comprehensive UI automation testing.
 
