@@ -2,7 +2,7 @@
 # Robust Automation Testing Framework
 
 <!--![Automation Testing Banner](https://via.placeholder.com/1000x300?text=Automation+Testing+Framework)   -->
-![Image Alt Text](https://anhtester.com/uploads/lesson/banner_post_cucumber_testng.jpg)
+![Image Alt Text]Screenshot4.png)
 ![Alt text](Screenshot3.png)
 
 
