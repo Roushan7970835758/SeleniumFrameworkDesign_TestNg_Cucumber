@@ -96,7 +96,9 @@ pom.xml
 
 ## 📊 **Test Report Example**
 
-![ExtentReports Example](https://via.placeholder.com/800x400?text=Sample+ExtentReport)
+<!--![ExtentReports Example](https://via.placeholder.com/800x400?text=Sample+ExtentReport)  -->
+![Alt text](Screenshot 2025-01-09 023858.png)
+![Alt text](Screenshot 2025-01-09 023922.png)
 
 ---
 
