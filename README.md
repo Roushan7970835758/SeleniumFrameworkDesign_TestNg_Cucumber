@@ -107,12 +107,12 @@ pom.xml
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/repository-name.git
+   git clone https://github.com/Roushan7970835758/SeleniumFrameworkDesign_TestNg_Cucumber.git
    ```
 
 2. **Navigate to the project directory**:
    ```bash
-   cd repository-name
+   cd SeleniumFrameworkDesign_TestNg_Cucumber
    ```
 
 3. **Install dependencies**:
@@ -124,7 +124,7 @@ pom.xml
 4. **Run the tests**:
    Execute tests using Maven:
    ```bash
-   mvn test
+   mvn test -PRegression
    ```
 
 ---
@@ -143,7 +143,5 @@ Contributions are welcome! Please create a pull request or open an issue for any
 
 ---
 
-## 📄 **License**
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
