@@ -34,12 +34,51 @@ Follow **OOP principles** to enhance maintainability and scalability.
 ## 📂 **Project Structure**
 
 ```plaintext
-├── src/main/java       # Core framework logic
-├── src/test/java       # Test scripts
-├── test-data           # External test data files
-├── reports             # Generated test reports
-├── pom.xml             # Maven dependencies
-└── README.md           # Project documentation
+src/main/java
+├── Selenium.AbstractComponents
+│   ├── AbstractComponents.java
+├── Selenium.pageObject
+│   ├── cartPage.java
+│   ├── CheckOutPage.java
+│   ├── conformationPage.java
+│   ├── landingPage.java
+│   ├── orderPage.java
+│   ├── productCatalog.java
+├── Selenium.resources
+    ├── ExtentReporterNG.java
+    ├── GlobalData.properties
+
+src/test/java
+├── cucumber
+│   ├── TestNGTestRunner.java
+│   ├── errorValidation.feature
+│   ├── SubmitOrder.feature
+├── Selenium.Data
+│   ├── dataReader.java
+│   ├── PurchaseData.json
+├── Selenium.stepDefinition
+│   ├── stepDefinitionImpl.java
+├── Selenium.test
+│   ├── AppTest.java
+│   ├── errorValidationTest.java
+│   ├── standAlone.java
+│   ├── submitOrderTest.java
+├── Selenium.TestComponents
+    ├── BaseTest.java
+    ├── Listeners.java
+    ├── Retry.java
+    ├── testing.java
+
+TestSuite
+├── ErrorValidation.xml
+├── purchase.xml
+├── testng.xml
+├── testng2.xml
+
+reports
+├── reports1
+
+pom.xml
 ```
 
 ---
