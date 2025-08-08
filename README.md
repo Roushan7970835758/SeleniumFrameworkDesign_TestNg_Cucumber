@@ -19,22 +19,50 @@ Hybrid UI test automation framework using Java, Selenium WebDriver, TestNG, and 
 ### Project Structure
 ```plaintext
 src/main/java
-├─ Selenium/AbstractComponents/AbstractComponents.java
-├─ Selenium/pageObject/{cartPage.java, CheckOutPage.java, conformationPage.java, landingPage.java, orderPage.java, productCatalog.java}
-└─ Selenium/resources/{ExtentReporterNG.java, GlobalData.properties}
+├── Selenium.AbstractComponents
+│   ├── AbstractComponents.java
+├── Selenium.pageObject
+│   ├── cartPage.java
+│   ├── CheckOutPage.java
+│   ├── conformationPage.java
+│   ├── landingPage.java
+│   ├── orderPage.java
+│   ├── productCatalog.java
+├── Selenium.resources
+    ├── ExtentReporterNG.java
+    ├── GlobalData.properties
 
 src/test/java
-├─ cucumber/{TestNGTestRunner.java, errorValidation.feature, SubmitOrder.feature}
-├─ Selenium/Data/{dataReader.java, PerchaseData.json}
-├─ Selenium/stepDefination/stepDefinationImpli.java
-├─ Selenium/test/{AppTest.java, errorValidationTest.java, standAlone.java, submitOrderTest.java}
-└─ Selenium/TestComponents/{BaseTest.java, Listners.java, Retry.java, testing.java}
+├── cucumber
+│   ├── TestNGTestRunner.java
+│   ├── errorValidation.feature
+│   ├── SubmitOrder.feature
+├── Selenium.Data
+│   ├── dataReader.java
+│   ├── PurchaseData.json
+├── Selenium.stepDefinition
+│   ├── stepDefinitionImpl.java
+├── Selenium.test
+│   ├── AppTest.java
+│   ├── errorValidationTest.java
+│   ├── standAlone.java
+│   ├── submitOrderTest.java
+├── Selenium.TestComponents
+    ├── BaseTest.java
+    ├── Listeners.java
+    ├── Retry.java
+    ├── testing.java
 
-TestSuite/{testng.xml, purchase.xml, ErrorValidation.xml, testng2.xml}
-reports/index.html  (Extent report)
-reports1/*.png      (Screenshots)
-target/cucumber.html (Cucumber HTML)
-test-output/index.html (TestNG report)
+TestSuite
+├── ErrorValidation.xml
+├── purchase.xml
+├── testng.xml
+├── testng2.xml
+
+reports
+├── reports1
+
+pom.xml
 ```
 
 ### Configuration
