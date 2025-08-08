@@ -1,147 +1,104 @@
 
-# Robust Automation Testing Framework
+## Selenium + TestNG + Cucumber UI Automation Framework
 
-<!--![Automation Testing Banner](https://via.placeholder.com/1000x300?text=Automation+Testing+Framework)   -->
 ![Alt text](Screenshot4.png)
 ![Alt text](Screenshot3.png)
 
+Hybrid UI test automation framework using Java, Selenium WebDriver, TestNG, and Cucumber. Includes data-driven tests, page object model, rich reports, and TestNG suite profiles.
 
-This project is a **robust automation testing framework** built using **Java**, **Selenium WebDriver**, **TestNG**, and **Cucumber**. It integrates the strengths of **TestNG** for test execution and **Cucumber** for behavior-driven development (BDD), providing a **hybrid solution** for efficient and comprehensive UI automation testing.
+### Requirements
+- Java 17+
+- Maven 3.8+
+- Chrome/Firefox/Edge (locally installed)
 
----
+### Tech Stack
+- Selenium 4, TestNG 7, Cucumber 7, ExtentReports 5
+- WebDriverManager for driver binaries
+- Jackson for JSON test data
 
-## 🚀 **Framework Features**
-
-### 🔄 **Parallel Execution**
-Run multiple test cases simultaneously to save time.
-
-### 📊 **Data-Driven Testing**
-Ensure versatile test coverage by leveraging test data from external sources.
-
-### 📝 **Behavior-Driven Development (BDD)**
-Facilitate easy collaboration with stakeholders using Cucumber's Gherkin syntax.
-
-### 📋 **Detailed Reporting**
-Generate customizable and visually appealing test reports using **ExtentReports**.
-
-### 🌐 **Git Integration**
-Seamlessly integrate with **Git** for version control and enable CI/CD pipelines.
-
-### 🔧 **Modular Design**
-Follow **OOP principles** to enhance maintainability and scalability.
-
----
-
-## 📂 **Project Structure**
-
+### Project Structure
 ```plaintext
 src/main/java
-├── Selenium.AbstractComponents
-│   ├── AbstractComponents.java
-├── Selenium.pageObject
-│   ├── cartPage.java
-│   ├── CheckOutPage.java
-│   ├── conformationPage.java
-│   ├── landingPage.java
-│   ├── orderPage.java
-│   ├── productCatalog.java
-├── Selenium.resources
-    ├── ExtentReporterNG.java
-    ├── GlobalData.properties
+├─ Selenium/AbstractComponents/AbstractComponents.java
+├─ Selenium/pageObject/{cartPage.java, CheckOutPage.java, conformationPage.java, landingPage.java, orderPage.java, productCatalog.java}
+└─ Selenium/resources/{ExtentReporterNG.java, GlobalData.properties}
 
 src/test/java
-├── cucumber
-│   ├── TestNGTestRunner.java
-│   ├── errorValidation.feature
-│   ├── SubmitOrder.feature
-├── Selenium.Data
-│   ├── dataReader.java
-│   ├── PurchaseData.json
-├── Selenium.stepDefinition
-│   ├── stepDefinitionImpl.java
-├── Selenium.test
-│   ├── AppTest.java
-│   ├── errorValidationTest.java
-│   ├── standAlone.java
-│   ├── submitOrderTest.java
-├── Selenium.TestComponents
-    ├── BaseTest.java
-    ├── Listeners.java
-    ├── Retry.java
-    ├── testing.java
+├─ cucumber/{TestNGTestRunner.java, errorValidation.feature, SubmitOrder.feature}
+├─ Selenium/Data/{dataReader.java, PerchaseData.json}
+├─ Selenium/stepDefination/stepDefinationImpli.java
+├─ Selenium/test/{AppTest.java, errorValidationTest.java, standAlone.java, submitOrderTest.java}
+└─ Selenium/TestComponents/{BaseTest.java, Listners.java, Retry.java, testing.java}
 
-TestSuite
-├── ErrorValidation.xml
-├── purchase.xml
-├── testng.xml
-├── testng2.xml
-
-reports
-├── reports1
-
-pom.xml
+TestSuite/{testng.xml, purchase.xml, ErrorValidation.xml, testng2.xml}
+reports/index.html  (Extent report)
+reports1/*.png      (Screenshots)
+target/cucumber.html (Cucumber HTML)
+test-output/index.html (TestNG report)
 ```
 
----
+### Configuration
+- Browser: set in `src/main/java/Selenium/resources/GlobalData.properties`
+  - `browser=chrome` (default). Override with Maven: `-Dbrowser=firefox` or `-Dbrowser=edge`.
+- Base URL is also in `GlobalData.properties` as `url`.
+- Test data: `src/test/java/Selenium/Data/PerchaseData.json`.
 
-## 🛠️ **Technologies Used**
+### Quick Start
+1) Install dependencies
+```bash
+mvn clean install
+```
 
-- **Java**: Programming language for core development.
-- **Selenium WebDriver**: Browser automation tool.
-- **TestNG**: Test execution framework.
-- **Cucumber**: BDD framework.
-- **ExtentReports**: Reporting tool.
-- **Git**: Version control system.
+2) Run the default regression suite (TestNG)
+```bash
+mvn test -PRegression
+```
 
----
+3) Run purchase suite
+```bash
+mvn test -Ppurchase
+```
 
-## 📊 **Test Report Example**
+4) Run error validation suite
+```bash
+mvn test -PErrorValidation
+```
 
-<!--![ExtentReports Example](https://via.placeholder.com/800x400?text=Sample+ExtentReport)  -->
+5) Run Cucumber tests (via TestNG runner)
+```bash
+mvn test -PCucumberTests
+```
+Tags are configured in `cucumber/TestNGTestRunner.java` (`@CucumberOptions`). Adjust tags there if needed.
+
+6) Run with a specific browser
+```bash
+mvn test -PRegression -Dbrowser=firefox
+```
+
+7) Run a specific TestNG XML without a profile (alternative)
+```bash
+mvn -Dsurefire.suiteXmlFiles=TestSuite/purchase.xml test
+```
+
+### Reports
+- Extent report: `reports/index.html`
+- Cucumber report: `target/cucumber.html`
+- TestNG report: `test-output/index.html`
+- Screenshots on failure: `reports1/<TestName>_<timestamp>.png`
+
+### IDE Usage
+- Open the project as a Maven project.
+- Run `TestSuite/*.xml` from the IDE or run individual tests/classes.
+- For Cucumber, run `cucumber.TestNGTestRunner`.
+
+### Troubleshooting
+- WebDriver version issues: WebDriverManager auto-resolves drivers; ensure browsers are up to date.
+- Java version: Ensure JAVA_HOME points to Java 17+ (`mvn -v` should show Java 17).
+- Clean target if suites behave unexpectedly: `mvn clean`.
+
+### Example Reports
 ![Alt text](Screenshot1.png)
 ![Alt text](Screenshot2.png)
 
----
-
-## ⚙️ **Setup Instructions**
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/Roushan7970835758/SeleniumFrameworkDesign_TestNg_Cucumber.git
-   ```
-
-2. **Navigate to the project directory**:
-   ```bash
-   cd SeleniumFrameworkDesign_TestNg_Cucumber
-   ```
-
-3. **Install dependencies**:
-   Ensure you have Maven installed, then run:
-   ```bash
-   mvn clean install
-   ```
-
-4. **Run the tests**:
-   Execute tests using Maven:
-   ```bash
-   mvn test -PRegression
-   ```
-
----
-
-## 📌 **Key Benefits**
-
-- **End-to-End Automation**: Ensures reliable software delivery.
-- **Comprehensive Coverage**: Handles complex workflows with ease.
-- **Best Practices**: Demonstrates industry-standard testing techniques.
-
----
-
-## 🌟 **Contributing**
-
-Contributions are welcome! Please create a pull request or open an issue for any enhancements or bugs.
-
----
-
-
-
+### Contributing
+PRs and issues are welcome.
